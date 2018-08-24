@@ -24,5 +24,16 @@ The goals / steps of this project are the following:
 
 For the first stage, feature extraction, three kinds of feature are extracted from images： HOG, binned color feature and histograms of color.
 
+In order to extract the feature of vehicle and non-vehicle objects, the training dataset need to feed in feature extraction stage, the below figures are vehicle:
+
+![png](Figures/Vehicle_examples.png)
+
+And non-vehicle figures like following:
+
+![png](Figures/non_Vehicle_examples.png)
+
+The size of training images is 64X64 pixels. 
+
 **Histogram of Oriented Gradients (HOG)**
+
 
