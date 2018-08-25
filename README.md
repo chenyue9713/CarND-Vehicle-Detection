@@ -44,6 +44,10 @@ And also following figures are non vehicle images and corresponding HOG feature 
 
 ![png](Figures/non_Vehicle_hog.png)
 
+What's more, binned color features and histograms of color features is applied on the stage. 
 
+So several paramters need to be tuned to fit vehicle and non-vehicle detection, such as HOG orientations, HOG pixel per cell, HOG cells per block, spatial bining dimensions, number of hisogram bins. 
+
+After extracting those features, normalizing these paramters is necessary 
 
 
