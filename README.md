@@ -37,9 +37,13 @@ The size of training images is 64X64 pixels.
 **Histogram of Oriented Gradients (HOG)**
 HOG is a [technique counts occurrences of gradient orientation in localized portions of an image](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients)
 In the stage, extracting HOG features is implemented by function **_get_hog_features_**. The below figures are some vehicle images and corresponding HOG feature images:
+
 ![png](Figures/Vehicle_hog.png)
+
 And also following figures are non vehicle images and corresponding HOG feature images:
+
 ![png](Figures/non_Vehicle_hog.png)
+
 
 
 
