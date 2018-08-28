@@ -134,5 +134,35 @@ The function **_add_heat_** is to add "heat" (+=1) for all pixels within windows
 
 ![png](Figures/heat_map.png)
 
+Then by applying **_apply_threshold_** method(in the example, with value 4), setting all pixel that don't exceed threshold to zero, the figure is following:
 
+![png](Figures/threshold_heatmap.png)
+
+And **_label_** function from library **_scipy.ndimage.measurements_** lebel heat map image, like below figure:
+
+![png](Figures/labels.png)
+
+Then, **_draw_labeled_bboxes_** draw the rectangles into original image:
+
+![png](Figures/rect_image.png)
+
+The result of passing all of test images by applying above pipeline are shown in following:
+
+![png](Figures/pipeline_images.png)
+
+Acutally, at beginning, the pipeline will cause some false positives on some images because the various false positives is difficult to apply same threshold for each image. So my solution is that I applying threshold technique for each searching areas. From above table, I have 5 different searching area configurations, each configuration will be processed by heatmap, applying threshold, label. The method will make sure the false positives from each configuration will limited to small value, rather than false positives accumulate from each configuration to a large number, which will be hard filter it out. 
+
+### Video  Implementation
+Compared with static image processing, video is formed by continous time-series images and normally video is filmed at least 24 frames per second. So the positions of detected object(Vehicle) between two time-adjacent frames are quite similar. I take advantage of above knowledge to define a method **_video_processing_pipeline_** and a class **_Vehicle_Detect_** (the idea is inspired by udacity alumni  [Jeremy shannon](https://github.com/jeremy-shannon/CarND-Vehicle-Detection/blob/master/README.md)). **_Vehicle_Detect_** keep tracking the previous 12 frames rectangles and store those in to list **_pre_rects_**. **_video_processing_pipeline_** draw the reactangles from previous 12 frames into current frame. Then apply heatmap, threshold and lebel to filter out false position. So in this way the rectangles shown on video are stable in position and size. 
+
+Here is a like to .[project video](https://youtu.be/7xVx7FraP2w)
+
+### Discussion
+From the project, I learn traditional computer vision method to achieve vehicle detection, which is a great and fun experience to explore and optimize the solution. Finally I completed the project, however it is still not perfect and have several problems: 
+
+    1. The video created by my algorithms have some glitch, in other word, it have few false positive on some frames. It is possible caused by extracting feature and training classifier part. Because I didn't consider time-series issue, it may cause the classifier is overfitting. So I will continue to explore solution for the issue.
+    
+    2. The pipeline is inefficient and can't runs in real time. the reason is that when the highest priority of deciding the parameters for extracting feature is accuracy, which sacrificed speed of classifier. Exploring the parameter to speed it up and keep high accuracy is next step for me. 
+    
+    3. 
 
