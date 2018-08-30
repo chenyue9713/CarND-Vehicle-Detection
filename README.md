@@ -6,7 +6,7 @@
 **Vehicle Detection Project**
 
 In the project, I implemented traditional computer vision to achieve vehicle detection on the road. The traditional computer vision technique for object
-detection contains feature extraction, spatial sampling and classification. Different algorithms are applied on these stages and the parameter
+detection contains feature extraction, spatial sampling and classification. Different algorithms are applied on these stages and the parameters
 for these stages tuned by hand.
 
 The goals / steps of this project are the following:
@@ -160,9 +160,12 @@ Here is a like to .[project video](https://youtu.be/7xVx7FraP2w)
 ### Discussion
 From the project, I learn traditional computer vision method to achieve vehicle detection, which is a great and fun experience to explore and optimize the solution. Finally I completed the project, however it is still not perfect and have several problems: 
 
-    1. The video created by my algorithms have some glitch, in other word, it have few false positive on some frames. It is possible caused by extracting feature and training classifier part. Because I didn't consider time-series issue, it may cause the classifier is overfitting. So I will continue to explore solution for the issue.
+    1. The video created by my algorithms have some glitch, in other word, it have few false positive on some frames. 
+    It is possible caused by extracting feature and training classifier part. Because I didn't consider time-series issue,
+    it may cause the classifier is overfitting. So I will continue to explore solution for the issue.
     
-    2. The pipeline is inefficient and can't runs in real time. the reason is that when the highest priority of deciding the parameters for extracting feature is accuracy, which sacrificed speed of classifier. Exploring the parameter to speed it up and keep high accuracy is next step for me. 
+    2. The pipeline is inefficient and can't runs in real time. the reason is that when the highest priority of deciding 
+    the parameters for extracting feature is accuracy, which sacrificed speed of classifier. Exploring the parameter to
+    speed it up and keep high accuracy is next step for me. 
     
-    3. 
 
